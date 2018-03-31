@@ -1,10 +1,46 @@
-#container {
-  margin: 0 auto;
-  width: 360px;
-  background-color: lavender; }
-
-.checked {
-  color: gray;
-  text-decoration: line-through; }
+body {
+  font-family: 'Roboto', sans-serif; }
+  body #container {
+    margin: 100px auto;
+    width: 360px;
+    background: lavender;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
+    body #container h1 {
+      background: #5cb2ce;
+      color: white;
+      margin: 0;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 24px;
+      font-weight: normal; }
+    body #container input {
+      color: #5cb2ce;
+      box-sizing: border-box;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      background: lavender;
+      padding: 13px 13px 13px 20px;
+      border: none;
+      font-size: 18px; }
+    body #container input:focus {
+      background: white;
+      border: 3px solid #5cb2ce;
+      outline: none; }
+    body #container #list {
+      margin-top: 0;
+      list-style: none;
+      padding: 0; }
+      body #container #list li {
+        background: #fff;
+        height: 40px;
+        line-height: 40px;
+        color: #666; }
+      body #container #list li:nth-child(2n) {
+        background: lavender; }
+      body #container #list .checked {
+        color: gray;
+        text-decoration: line-through; }
 
 /*# sourceMappingURL=main.css.map */
