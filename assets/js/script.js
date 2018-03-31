@@ -5,7 +5,7 @@ $("ul").on("click", "li", () => {
 
 //Delete ToDo Items:
 $("ul").on("click", "span", (event) => {
-  $(event.target).parent().fadeOut(500, () => {
+  $(event.target).closest("li").fadeOut(500, () => {
     $(this).remove( )
   })
   event.stopPropagation()
