@@ -1,4 +1,10 @@
 #container {
-  text-align: center; }
+  margin: 0 auto;
+  width: 360px;
+  background-color: lavender; }
+
+.checked {
+  color: gray;
+  text-decoration: line-through; }
 
 /*# sourceMappingURL=main.css.map */
