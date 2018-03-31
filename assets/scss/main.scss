@@ -1,34 +1,49 @@
+$header-color: #5cb2ce;
+$list-color: lavender;
+$alt-list-color: #fff;
+
+@mixin line-style {
+  height: 40px;
+  line-height: 40px;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
+  background: #ef32d9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #89fffd, #ef32d9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #89fffd, #ef32d9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   #container {
     margin: 100px auto;
     width: 360px;
-    background: lavender;
+    background: $list-color;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     h1 {
-      background: #5cb2ce;
-      color: white;
+      background: $header-color;
+      color: $alt-list-color;
       margin: 0;
       padding: 10px 20px;
       text-transform: uppercase;
       text-align: center;
       font-size: 24px;
       font-weight: normal;
+      .fa-plus {
+        float: right;
+      }
     }
     input {
-      color: #5cb2ce;
+      @include line-style;
+      color: $header-color;
       box-sizing: border-box;
       width: 100%;
-      height: 40px;
-      line-height: 40px;
-      background: lavender;
+      background: $list-color;
       padding: 13px 13px 13px 20px;
       border: none;
       font-size: 18px;
     }
     input:focus {
-      background: white;
-      border: 3px solid #5cb2ce;
+      background: $alt-list-color;
+      border: 3px solid $header-color;
       outline: none;
     }
     #list {
@@ -36,13 +51,27 @@ body {
       list-style: none;
       padding: 0;
       li {
-        background: #fff;
-        height: 40px;
-        line-height: 40px;
+        @include line-style;
+        background: $alt-list-color;
         color: #666;
+        span{
+          background: #e74c3c;
+          height: 40px;
+          margin-right: 20px;
+          text-align: center;
+          color: $alt-list-color;
+          width: 0px;
+          display: inline-block;
+          transition: 0.2s linear;
+          opacity: 0;
+        }
+      }
+      li:hover span {
+        width: 40px;
+        opacity: 1;
       }
       li:nth-child(2n){
-        background: lavender;
+        background: $list-color;
       }
       .checked {
           color: gray;
@@ -51,8 +80,6 @@ body {
     }
   }
 }
-
-
 
 
 

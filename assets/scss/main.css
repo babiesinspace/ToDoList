@@ -1,5 +1,11 @@
 body {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  background: #ef32d9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #89fffd, #ef32d9);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #89fffd, #ef32d9);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
   body #container {
     margin: 100px auto;
     width: 360px;
@@ -7,25 +13,27 @@ body {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
     body #container h1 {
       background: #5cb2ce;
-      color: white;
+      color: #fff;
       margin: 0;
       padding: 10px 20px;
       text-transform: uppercase;
       text-align: center;
       font-size: 24px;
       font-weight: normal; }
+      body #container h1 .fa-plus {
+        float: right; }
     body #container input {
+      height: 40px;
+      line-height: 40px;
       color: #5cb2ce;
       box-sizing: border-box;
       width: 100%;
-      height: 40px;
-      line-height: 40px;
       background: lavender;
       padding: 13px 13px 13px 20px;
       border: none;
       font-size: 18px; }
     body #container input:focus {
-      background: white;
+      background: #fff;
       border: 3px solid #5cb2ce;
       outline: none; }
     body #container #list {
@@ -33,10 +41,23 @@ body {
       list-style: none;
       padding: 0; }
       body #container #list li {
-        background: #fff;
         height: 40px;
         line-height: 40px;
+        background: #fff;
         color: #666; }
+        body #container #list li span {
+          background: #e74c3c;
+          height: 40px;
+          margin-right: 20px;
+          text-align: center;
+          color: #fff;
+          width: 0px;
+          display: inline-block;
+          transition: 0.2s linear;
+          opacity: 0; }
+      body #container #list li:hover span {
+        width: 40px;
+        opacity: 1; }
       body #container #list li:nth-child(2n) {
         background: lavender; }
       body #container #list .checked {

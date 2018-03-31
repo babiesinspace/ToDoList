@@ -1,11 +1,11 @@
 //Strike Through Specific Items When Clicked:
-$("ul").on("click", "li", () => {
+$("#list").on("click", "li", () => {
   $(event.target).toggleClass("checked")
 })
 
 //Delete ToDo Items:
-$("ul").on("click", "span", (event) => {
-  $(event.target).parent().fadeOut(500, () => {
+$("#list").on("click", ".todo", (event) => {
+  $(event.target).closest("li").fadeOut(500, () => {
     $(this).remove( )
   })
   event.stopPropagation()
@@ -15,7 +15,12 @@ $("ul").on("click", "span", (event) => {
 $("input[type='text']").on("keypress", (event) => {
   if (event.which == 13) {
     let newItem = $(event.target).val()
-    $("<li><span>X</span> " + newItem + "</li>").appendTo("#list")
+    $("<li><span class='todo'><i class='fas fa-trash-alt'></i></span> " + newItem + "</li>").appendTo("#list")
     $(event.target).val("")
   }
+})
+
+//Hide list
+$("#plus").on("click", () => {
+  $("input[type='text']").fadeToggle()
 })
