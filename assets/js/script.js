@@ -22,5 +22,5 @@ $("input[type='text']").on("keypress", (event) => {
 
 //Hide list
 $("#plus").on("click", () => {
-  $("#list").toggleClass("hidden")
+  $("input[type='text']").fadeToggle()
 })
